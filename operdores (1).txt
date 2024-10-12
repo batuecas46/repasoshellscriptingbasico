@@ -1,0 +1,154 @@
+#!/bin/bash
+
+# Este archivo  es para   aprender los caracteeres matematicos
+
+
+# Operadores de comparación en Bash
+
+Operador	Significado	Ejemplo
+==	Igual a (para cadenas y números)	if [ "$a" == "$b" ]; then (compara si las cadenas a y b son iguales)
+
+!=	Diferente de	if [ $x != $y ]; then (compara si x es diferente de y)
+
+>	Mayor que (para números)	if [ $num1 -gt $num2 ]; then (compara si num1 es mayor que num2)
+
+<	Menor que (para números)	if [ $num1 -lt $num2 ]; then (compara si num1 es menor que num2)
+
+>=	Mayor o igual que (para números)	if [ $edad -ge 18 ]; then (compara si edad es mayor o igual a 18)
+
+<=	Menor o igual que (para números)	if [ $calificacion -le 6 ]; then (compara si calificacion es menor o igual a 6)
+
+-eq	Igual a (para números enteros)	if [ $a -eq $b ]; then (compara si a y b son iguales como enteros)
+
+-ne	No es igual a (para números enteros)	if [ $x -ne $y ]; then (compara si x y y son diferentes como enteros)
+
+-gt	Mayor que (para números enteros)	if [ $num1 -gt $num2 ]; then (compara si num1 es mayor que num2)
+
+-lt	Menor que (para números enteros)	if [ $num1 -lt $num2 ]; then (compara si num1 es menor que num2)
+
+-ge	Mayor o igual que (para números enteros)	if [ $edad -ge 18 ]; then (compara si edad es mayor o igual a 18)
+
+-le	Menor o igual que (para números enteros)	if [ $calificacion -le 6 ]; then (compara si calificacion es menor o igual a 6)
+
+-z	Cadena vacía (comprueba si una cadena está vacía)	if [ -z "$cadena" ]; then (compara si la cadena está vacía)
+
+-n	Cadena no vacía (comprueba si una cadena no está vacía)	if [ -n "$cadena" ]; then (compara si la cadena no está vacía)
+
+
+
+
+Operadores Numéricos
+==: Igual a. Ejemplo: if [ $a -eq $b ]; then (en Bash) verifica si a es igual a b.
+
+!=: Diferente de. Ejemplo: if [ $x != $y ]; then (en Bash) verifica si x es diferente de y.
+
+>: Mayor que. Ejemplo: if [ $num1 -gt $num2 ]; then (en Bash) verifica si num1 es mayor que num2.
+
+<: Menor que. Ejemplo: if [ $num1 -lt $num2 ]; then (en Bash) verifica si num1 es menor que num2.
+
+>=: Mayor o igual que. Ejemplo: if [ $edad -ge 18 ]; then (en Bash) verifica si edad es mayor o igual a 18.
+
+<=: Menor o igual que. Ejemplo: if [ $calificacion -le 6 ]; then (en Bash) verifica si calificacion es menor o igual a 6.
+
+Comentario: Estos operadores son esenciales para realizar comparaciones numéricas en cualquier lenguaje de programación.
+
+Operadores de Cadenas
+==: Igual a (compara caracteres). Ejemplo: if [ "$cadena1" == "$cadena2" ]; then (en Bash) verifica si las cadenas son iguales.
+
+!=: Diferente de. Ejemplo: if [ "$nombre" != "Juan" ]; then (en Bash) verifica si nombre es diferente de "Juan".
+
+>: Mayor que (orden alfabético). Ejemplo: if [ "banana" > "apple" ]; then (en Bash) verifica si "banana" viene después de "apple" en el orden alfabético.
+
+
+<: Menor que (orden alfabético). Ejemplo: if [ "casa" < "carro" ]; then (en Bash) verifica si "casa" viene antes de "carro" en el orden alfabético.
+
+Comentario: Estos operadores son útiles para comparar texto, ordenar listas y realizar búsquedas.
+
+Operadores Lógicos
+&&: Y (ambas condiciones deben ser verdaderas). Ejemplo: if [ $edad -ge 18 && $altura -gt 160 ]; then (en Bash) verifica si se cumplen ambas condiciones.
+
+||: O (al menos una condición debe ser verdadera). Ejemplo: if [ $opcion == "si" || $opcion == "s" ]; then (en Bash) verifica si la opción es "si" o "s".
+
+!: Negación. Ejemplo: if [ ! -d "mi_carpeta" ]; then (en Bash) verifica si "mi_carpeta" no es un directorio.
+
+Comentario: Los operadores lógicos nos permiten combinar múltiples condiciones en una sola expresión.
+
+Operador de Coincidencia de Patrones
+=~: Coincide con una expresión regular. Ejemplo: if [[ $email =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then (en Bash) verifica si email tiene un formato de correo electrónico válido.
+
+Comentario: Las expresiones regulares son poderosas herramientas para validar patrones en cadenas de texto.
+
+Ejemplos Prácticos
+Verificar si un número es par: if [ $((num % 2)) -eq 0 ]; then echo "El número es par"; fi
+
+Ordenar dos números: if [ $a -gt $b ]; then echo "$a es mayor que $b"; else echo "$b es mayor o igual que $a"; fi
+
+Validar una contraseña: if [[ $password =~ ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$ ]]; then (comprueba si la contraseña tiene al menos 8 caracteres, una mayúscula, una minúscula y un número)
+
+
+
+# Comandos de prueba en Bash
+
+## Comprobación de archivos
+* **-f:** Verifica si un archivo existe y es un archivo regular.
+  * Ejemplo: `if [ -f "mi_archivo.txt" ]; then echo "El archivo existe"; fi`
+
+* **-d:** Verifica si un directorio existe.
+  * Ejemplo: `if [ -d "/home/usuario" ]; then echo "El directorio existe"; fi`
+
+* **-e:** Verifica si un archivo o directorio existe.
+  * Ejemplo: `if [ -e "mi_archivo.txt" ]; then echo "El archivo o directorio existe"; fi`
+
+* **-s:** Verifica si un archivo existe y tiene un tamaño mayor que cero.
+  * Ejemplo: `if [ -s "mi_archivo.txt" ]; then echo "El archivo no está vacío"; fi`
+
+## Comprobación de cadenas
+* **-z:** Verifica si una cadena está vacía.
+  * Ejemplo: `if [ -z "$variable" ]; then echo "La variable está vacía"; fi`
+
+* **-n:** Verifica si una cadena no está vacía.
+  * Ejemplo: `if [ -n "$variable" ]; then echo "La variable no está vacía"; fi`
+
+## Comparaciones numéricas
+
+* **-eq:** Igual a (para números enteros)
+
+* **-ne:** Diferente de (para números enteros)
+
+* **-gt:** Mayor que (para números enteros)
+
+* **-lt:** Menor que (para números enteros)
+
+* **-ge:** Mayor o igual que (para números enteros)
+
+* **-le:** Menor o igual que (para números enteros)
+
+## Comparaciones de cadenas
+* **==:** Igual a (para cadenas)
+* **!=:** Diferente de (para cadenas)
+* **>:** Mayor que (orden alfabético)
+* **<:** Menor que (orden alfabético)
+
+## Otros operadores
+* **&&:** Y lógico
+* **||:** O lógico
+* **!:** Negación
+
+
+
+#!/bin/bash
+
+
+ a   futuro sercano 
+
+# Buscar todos los archivos .txt en el directorio actual y subdirectorios
+find . -name "*.txt" | while read archivo; do
+  # Verificar si el archivo tiene más de 100 líneas
+  if [ $(wc -l < "$archivo") -gt 100 ]; then
+    # Crear una copia de seguridad del archivo
+    cp "$archivo" "$archivo.bak"
+    # Eliminar las 10 primeras líneas del archivo
+    sed -i '1,10d' "$archivo"
+    echo "Se ha creado una copia de seguridad de $archivo y se han eliminado las 10 primeras líneas."
+  fi
+done

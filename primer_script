@@ -1,0 +1,10 @@
+#!/bin/bash
+#mi primer script
+
+#AUTOR: JULIO bATUECAS
+
+ pwd
+ cd $home 
+echo "dirigiendo a $HOME" 
+ pwd
+
